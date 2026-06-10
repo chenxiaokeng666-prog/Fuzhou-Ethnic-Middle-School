@@ -6,7 +6,7 @@
     <title>Admissions | 福州民族中学</title>
     <meta name="description" content="福州民族中学招生与校园宣传页，展示学校概况、校园参观、办学特色与常见问题。">
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=perf1">
   </head>
   <body>
     <a class="skip-link" href="#content">跳至主要内容</a>
@@ -49,7 +49,7 @@
     <main id="content">
       <section id="top" class="page-hero" aria-labelledby="page-title">
         <div class="hero-media">
-          <img src="assets/t01b9433283e46c78d0.jpg" alt="福州民族中学校园全景">
+          <img src="assets/t01b9433283e46c78d0.webp" alt="福州民族中学校园全景" width="920" height="649" decoding="async" fetchpriority="high">
           <div class="hero-overlay"></div>
           <h1 id="page-title">Admissions</h1>
           <button class="pause-button" type="button" aria-label="暂停背景影像" aria-pressed="false" data-action="toggle-motion">
@@ -115,11 +115,11 @@
             通过视频先感受校园环境、课堂氛围和学生活动。视频支持手机端自适应播放，也可以全屏观看。
           </p>
         </div>
-        <div class="video-frame">
-          <video controls playsinline preload="none" poster="assets/t01b9433283e46c78d0.jpg" aria-label="福州民族中学校园宣传视频">
-            <source src="assets/promo-video.mp4" type="video/mp4">
-            当前浏览器不支持直接播放视频，请下载后查看。
-          </video>
+        <div class="video-frame video-frame--deferred" data-video-src="assets/promo-video.mp4">
+          <button class="video-placeholder" type="button" data-action="load-video" aria-label="播放福州民族中学校园宣传视频">
+            <img src="assets/t01b9433283e46c78d0.webp" alt="" width="920" height="649" loading="lazy" decoding="async">
+            <span class="video-play-button">播放校园视频</span>
+          </button>
         </div>
       </section>
 
@@ -170,7 +170,7 @@
           </p>
           <div class="visit-options" aria-label="参观与联系">
             <article class="image-option an-will-animate">
-              <img src="assets/campus-redbrick.jpg" alt="校园教学楼与绿化">
+              <img src="assets/campus-redbrick.webp" alt="校园教学楼与绿化" width="1600" height="1067" decoding="async" loading="lazy">
               <div>
                 <span>Campus Tour</span>
                 <h3>走进校园</h3>
@@ -210,7 +210,7 @@
 
         <div class="editorial-layout">
           <article class="lead-story an-will-animate an-will-animate--left">
-            <img src="assets/campus-playground.jpg" alt="福州民族中学校园广场与教学楼">
+            <img src="assets/campus-playground.webp" alt="福州民族中学校园广场与教学楼" width="1067" height="1600" decoding="async" loading="lazy">
             <h3>从山海校园出发，发现更广阔的自己</h3>
             <p>
               学生在课堂学习、文化活动、社团实践和同伴交往中不断确认自己的兴趣，
@@ -224,28 +224,28 @@
                 <span>Academics</span>
                 <strong>在高效课堂中建立学习自信</strong>
               </div>
-              <img src="assets/classroom-learning.jpg" alt="">
+              <img src="assets/classroom-learning.webp" alt="" width="1600" height="1173" decoding="async" loading="lazy">
             </a>
             <a href="student-life.html#culture">
               <div>
                 <span>Culture</span>
                 <strong>让畲族文化成为可体验的课程</strong>
               </div>
-              <img src="assets/culture-dance.jpg" alt="">
+              <img src="assets/culture-dance.webp" alt="" width="1407" height="1600" decoding="async" loading="lazy">
             </a>
             <a href="visit.html">
               <div>
                 <span>Campus</span>
                 <strong>在校园生活里学习尊重与共同成长</strong>
               </div>
-              <img src="assets/campus-basketball.jpg" alt="">
+              <img src="assets/campus-basketball.webp" alt="" width="1200" height="1600" decoding="async" loading="lazy">
             </a>
             <a href="guide.html">
               <div>
                 <span>Apply</span>
                 <strong>了解报读流程与入学后的成长支持</strong>
               </div>
-              <img src="assets/classroom-teacher.jpg" alt="">
+              <img src="assets/classroom-teacher.webp" alt="" width="1600" height="1067" decoding="async" loading="lazy">
             </a>
           </div>
         </div>
@@ -269,7 +269,7 @@
       <section id="life" class="story-cards-section">
         <div class="story-card-grid">
           <article class="story-card an-will-animate">
-            <img src="assets/classroom-hands.jpg" alt="学生在课堂上举手回答问题">
+            <img src="assets/classroom-hands.webp" alt="学生在课堂上举手回答问题" width="1600" height="1067" decoding="async" loading="lazy">
             <div>
               <h3>扎实课堂</h3>
               <p>重视基础能力、思维训练和学科素养，让学生在稳定的学习节奏中积累信心。</p>
@@ -277,7 +277,7 @@
             </div>
           </article>
           <article class="story-card an-will-animate">
-            <img src="assets/culture-costume.jpg" alt="学生文化活动与传统体验">
+            <img src="assets/culture-costume.webp" alt="学生文化活动与传统体验" width="1067" height="1600" decoding="async" loading="lazy">
             <div>
               <h3>民族文化</h3>
               <p>让畲语、畲歌、畲拳和礼仪服饰成为校园中可以看见、学习和传承的内容。</p>
@@ -285,7 +285,7 @@
             </div>
           </article>
           <article class="story-card an-will-animate">
-            <img src="assets/sports-soccer.jpg" alt="学生体育活动与校园生活">
+            <img src="assets/sports-soccer.webp" alt="学生体育活动与校园生活" width="1200" height="1600" decoding="async" loading="lazy">
             <div>
               <h3>共同成长</h3>
               <p>艺术、体育、社团和实践项目共同构成校园生活，让学生在多元交往中发现自己。</p>
@@ -882,6 +882,6 @@
 
       })();
     </script>
-    <script src="site.js" defer></script>
+    <script src="site.js?v=perf1" defer></script>
   </body>
 </html>

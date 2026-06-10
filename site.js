@@ -7,10 +7,51 @@
     document.body.classList.add('page-ready');
   }
 
+  function setupDeferredVideos() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-video-src]'), function (frame) {
+      var trigger = frame.querySelector('[data-action="load-video"]');
+      var videoSrc = frame.getAttribute('data-video-src');
+
+      if (!trigger || !videoSrc) {
+        return;
+      }
+
+      trigger.addEventListener('click', function () {
+        var video = document.createElement('video');
+        var source = document.createElement('source');
+
+        video.controls = true;
+        video.playsInline = true;
+        video.autoplay = true;
+        video.preload = 'metadata';
+        video.setAttribute('aria-label', trigger.getAttribute('aria-label') || '校园宣传视频');
+
+        source.src = videoSrc;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+        video.appendChild(document.createTextNode('当前浏览器不支持直接播放视频，请下载后查看。'));
+
+        frame.classList.add('is-video-loaded');
+        frame.replaceChildren(video);
+
+        if (typeof video.play === 'function') {
+          var playback = video.play();
+          if (playback && typeof playback.catch === 'function') {
+            playback.catch(function () {});
+          }
+        }
+      }, { once: true });
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', markReady, { once: true });
+    document.addEventListener('DOMContentLoaded', function () {
+      markReady();
+      setupDeferredVideos();
+    }, { once: true });
   } else {
     markReady();
+    setupDeferredVideos();
   }
 
   window.addEventListener('pageshow', function () {
