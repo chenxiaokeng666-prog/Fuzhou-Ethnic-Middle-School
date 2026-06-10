@@ -1394,6 +1394,59 @@ img {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.video-section {
+  width: min(1236px, calc(100% - 48px));
+  margin: 64px auto 0;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+  gap: 42px;
+  align-items: center;
+  padding: 34px;
+  background: #111111;
+  color: var(--white);
+}
+
+.video-copy {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+}
+
+.video-copy .section-kicker {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.video-copy h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", "SimSun", serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.video-copy p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.video-frame {
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #000000;
+}
+
 /* ===== 交互弹窗与表单 ===== */
 
 .interaction-layer {
@@ -2082,6 +2135,11 @@ body:hover .glow-cursor {
 }
 
 @media (max-width: 940px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   body {
     font-size: 18px;
   }
@@ -2098,6 +2156,8 @@ body:hover .glow-cursor {
   }
 
   .primary-nav {
+    width: 100%;
+    max-width: 100vw;
     justify-content: flex-start;
     gap: 8px;
     overflow-x: auto;
@@ -2106,7 +2166,18 @@ body:hover .glow-cursor {
   }
 
   .primary-nav a {
+    flex: 0 0 auto;
     white-space: nowrap;
+  }
+
+  .an-will-animate--left,
+  .an-will-animate--right {
+    transform: translateY(80px) !important;
+  }
+
+  .an-will-animate--left.an-on-viewport,
+  .an-will-animate--right.an-on-viewport {
+    transform: translateY(0) !important;
   }
 
   .utility-nav {
@@ -2171,6 +2242,13 @@ body:hover .glow-cursor {
   .content-band {
     width: calc(100% - 48px);
     padding: 54px 0;
+  }
+
+  .video-section {
+    width: calc(100% - 48px);
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 28px;
   }
 
   .info-grid,
@@ -2376,6 +2454,20 @@ body:hover .glow-cursor {
 
   .content-band {
     width: calc(100% - 32px);
+  }
+
+  .video-section {
+    width: calc(100% - 32px);
+    margin-top: 44px;
+    padding: 20px;
+  }
+
+  .video-copy h2 {
+    font-size: 30px;
+  }
+
+  .video-copy p {
+    font-size: 16px;
   }
 
   .content-band .lead {
